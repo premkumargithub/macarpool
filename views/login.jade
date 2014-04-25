@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        title Administration Portal
+        link(rel='stylesheet', href='stylesheets/common.css')
+        link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
+body.signin
+    .header
+      .logo
+      .wellog
+      .verificacion portal de verificacion
+    .signin_container
+      form.signin(action='/login', method='post')
+        .login-container
+          .signin_container_left
+            input#username.form-user(name='email', placeholder='USUARIO', type='text')
+            input#password.form-pass(name='password', placeholder='CONTRASENA', type='password')
+          .signin_container_right
+            button.btn.btn-primary(type='submit') INGRESAR
+        -if(err_messages && err_messages.length > 0){
+           div.msg
+               for err_message in err_messages
+                 p #{err_message} <br/>
+          -}
+    // footer
+    .footer-container
+      h3 2014
+      p Todos los derechos reservados © Miàguila SA
+    // footer
+

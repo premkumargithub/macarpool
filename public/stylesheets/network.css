@@ -1,0 +1,195 @@
+* {outline:none;}
+img {border:0;}
+body, h1, h2, p, ul {margin:0; padding:0;}
+body {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:14px; line-height:1.42857;}
+a {text-decoration:none;}
+.clear {clear:both;}
+#wrapper {width:100%; float:left;}
+.container {width:960px; margin:0 auto; position:relative;}
+#logo {float:left; margin-top:30px;}
+#logo span {display:block; font-size:13px; text-decoration:none; font-style:italic; text-align:center; color:#bebebe;}
+
+.headerTxt {position:absolute; left:50%; margin-left:-110px; top:69px;}
+.headerTxt p {text-transform:uppercase; font-weight:bold; font-size:20px; text-align:center;}
+.headerTxt p:nth-of-type(1) {color:#bf2f54; margin-bottom:10px;}
+.headerTxt p:nth-of-type(2) {color:#37b3b0;}
+
+#navigation {background:#808080; width:100%; margin-top:50px;}
+.nav ul {list-style:none;}
+.nav ul li {float:left; border-right:1px solid #999999;}
+.nav ul li:first-child, .nav ul li:last-child {border-left:1px solid #999999;}
+.nav ul li:last-child {float:right;}
+.nav ul li a {color:#FFF; padding:10px 25px; display:inline-block; text-transform: uppercase;}
+.nav ul li a:hover {background:#4d4d4d;}
+.nav ul li a.active {background:#4d4d4d;}
+
+.contentSerch {background:#e6e6e6; padding:21px 0;}
+.srchBox {float:left; width:80%;}
+.srchBox input[type="text"] {width:47%; height:35px; border:none; padding:1px 1%;text-transform: uppercase;}
+.input.fullbox {width: 100% !important;}
+.srchBox p:nth-of-type(2) {overflow: hidden; margin-top:15px;}
+.forBtn, .toFloat {float:right;}
+.forBtn button {background:#552d56; width:160px; height:90px; color:#FFF; border:none; cursor:pointer; font-size:32px;}
+
+#mainContent {background:#fafafa; padding-bottom:50px;}
+#mainContent ul {list-style:none;}
+#mainContent ul li {padding:12px 0;}
+#mainContent ul li.header {padding:60px 0 25px;}
+#mainContent ul li.header .sections {color:#999; /*text-indent:36px;*/text-transform: uppercase; width: 29%;}
+#mainContent ul li.header .vehiclesection {color:#999; /*text-indent:36px;*/text-transform: uppercase; width: 33%;}
+#mainContent ul li.even {background:#FFF;}
+.colorFont {color:#552d56; font-weight:bold; text-transform:uppercase;}
+#mainContent ul li div.sections {display:inline-block; width:29%;cursor: pointer;}
+#mainContent ul li div.vehiclesection {display:inline-block; width:33%;cursor: pointer;}
+.forBtns {text-align:right; display:inline-block; width:12%;}
+
+#footer {background:#fafafa; padding-bottom:15px;}
+#footer p {text-align:center;}
+#footer p:nth-of-type(1) {color:#f9c857;}
+#footer p:nth-of-type(2) {color:#CCC; font-size:10px;}
+
+/*--Statistics css --*/
+ .statics {background:#e6e6e6; padding:50px 0;}
+ .innerstats ul {list-style:none;}
+ .innerstats ul li {margin-bottom:15px; overflow:hidden;}
+ .innerstats ul li:last-child {margin:0;}
+ .innerstats ul li div {padding:15px 0; width:16.66%; color:#FFF; display:table-cell; vertical-align:middle;}
+ .innerstats ul li div p {padding:0 11px; text-transform:uppercase;font-size: 10.5px;}
+ .innerstats ul li div.forNumber {text-align:center; background:#FFF; font-size:24px; font-weight:bold; color:#4d4d4d;}
+ .innerstats ul li div.forRed {background:#bf2f54;}
+ .innerstats ul li div.forGreen {background:#37b3b0;}
+ .innerstats ul li div.forBlue {background:#552d56;} 
+ 
+ /* form for add */
+ button.add, .forForm form button {background:#552d56; border:none; cursor:pointer; float:right; color:#FFF; padding:4px 10px; margin-top:-4px; border:5px solid;text-transform: capitalize;}
+.forForm {position:relative;}
+.forForm p {margin:15px 0;}
+.forForm p.forSubmit {overflow:hidden;}
+.forForm label {display:inline-block; width:40%; text-align:left; color:#999;  text-transform: uppercase;}
+.forForm input[type="text"] {width:57%; height:35px; border:1px solid #e6e6e6; padding:1px 1%;}
+.forForm select {width:59%; height:39px; border:1px solid #e6e6e6;text-transform:uppercase;padding: 10px;}
+.forForm form button {margin:0;}
+button.enable, button.disable {cursor:pointer; border:none; color:#FFF;}
+button.enable {background:#37b3b0;}
+button.disable {background:#bf2f54;}
+ 
+/* Added By Prem */
+.addredes{
+	background: none repeat scroll 0 0 #FAFAFA;
+	text-align: center;
+}
+.addredes a{
+	cursor: pointer;
+}
+.resultfound {
+    color: #FF0000;
+    font-size: 15px;
+    text-align: center;
+}
+#mainContent .button-container {
+	margin: 10px 0 0;
+    text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none
+}
+.btn:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px
+}
+.btn:hover, .btn:focus {
+	color: #333;
+	text-decoration: none
+}
+.btn:active, .btn.active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+	box-shadow: inset 0 3px 5px rgba(0,0,0,0.125)
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+	pointer-events: none;
+	cursor: not-allowed;
+	margin-right: 10px;
+	opacity: .65;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	box-shadow: none
+}
+.btn-default {
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+	color: #333;
+	background-color: #ebebeb;
+	border-color: #adadad
+}
+.btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+	background-image: none
+}
+.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active {
+	background-color: #fff;
+	border-color: #ccc
+}
+.btn-default .badge {
+	color: #fff;
+	background-color: #fff
+}
+.btn-primary {
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+	color: #fff;
+	background-color: #3276b1;
+	border-color: #285e8e
+}
+.btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+	background-image: none
+}
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
+	background-color: #428bca;
+	border-color: #357ebd
+}
+
+.container .srchBox .rightbox {
+    float: right;
+}
+
+.vehiclesection a {
+	color: #000000 !important;	
+}
+
+.vehiclesection.organe_search {
+    color: #F58957;
+}
+
+.vehiclesection.blue_search {
+   color: #37b3b0;
+}
+
+.vehiclesection.red_search {
+   color: #bf2f54;
+}

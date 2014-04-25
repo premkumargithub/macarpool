@@ -1,0 +1,9 @@
+module.exports.home = require('./home');
+module.exports.login = require('./login');
+module.exports.search = require('./search');
+module.exports.passenger = require('./passenger');
+module.exports.editor = require('./editor');
+module.exports.institute = require('./institute');
+module.exports.statisticsPage = require('./statisticsPage');
+module.exports.vehicles = require('./vehicle');
+module.exports.statistics = require('./statistics');

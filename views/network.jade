@@ -1,0 +1,103 @@
+doctype html
+html(ng-app='NetworkApp', 
+xmlns='http://www.w3.org/1999/xhtml')
+head
+    //include header here
+    include header
+    script(type='text/javascript', src='../js/network.js')
+  body(ng-controller='networkCtl')
+    #wrapper
+      #header
+        .container
+          #logo
+            h1
+              a(href='search')
+                img(src='../image/logo.png')
+                span Vuela con un Amigo
+          .headerTxt
+            p Portal De verificación
+            p Redes
+          .clear
+      include mainmenu
+      .contentSerch
+        .container
+          .srchBox
+            p
+              input(type='text', placeholder='NOMBRE DE RED', ng-model="searchitem.name")
+              input.toFloat(type='text', placeholder='DOMINO 1', ng-model="searchitem.email_domain")
+            p
+              input.rightbox(type='text', placeholder='DOMINO 2', ng-model="searchitem.email_domain_alt")
+          .forBtn
+            button(ng-click="setFindOnly()") Agregar
+          .clear
+      .addredes
+        .loading(ng-show='loading')
+          img(src='../image/loader.gif') 
+      .container(ng-show="addPage")
+        .forForm
+          form(ng-submit="saveInstitute()")
+            p
+              label nombre de red
+              input(type='text', ng-model='institute.name', required)
+            p
+              label domino
+              input(type='text' ng-model='institute.email_domain', required)
+            p
+              label dominio alternativo
+              input(type='text' ng-model='institute.email_domain_alt')  
+            p
+              label estado
+              select(ng-model='institute.enabled')
+                option(value='') - Seleccione Estado -
+                option(value='true') permitir
+                option(value='false') inhabilitar
+            p.forSubmit
+              button presentar
+              button(ng-click="cancelAddInstiute()") cancelar
+      .container#editinstitude(ng-show="editPage")
+        .forForm
+          form(ng-submit="updateInstitute()")
+            p
+              label nombre de red
+              input(type='text', ng-model='edit.name', required)
+            p
+              label domino
+              input(type='text' ng-model='edit.email_domain', required)
+            p
+              label dominio alternativo
+              input(type='text' ng-model='edit.email_domain_alt')  
+            p
+              label estado
+              select(ng-model='edit.enabled')
+                option(value='true' selected) permitir
+                option(value='false') inhabilitar
+              input(type='hidden' ng-model='edit._id')  
+            p.forSubmit
+              button presentar 
+              button(ng-click="cancelAddInstiute()") cancelar       
+      #mainContent(ng-show="listPage")
+        .resultfound(ng-show="noresultFound") no más de red encontrado
+        ul(ng-hide="noresultFound")
+          li.header
+            .container
+              .sections(ng-click="reOrder('timestamp')") Fecha
+                a(href='javascript:void(0)')
+                  img(src='../image/arrow.png')
+              .sections(ng-click="reOrder('name')") nombre de red
+              .sections(ng-click="reOrder('email_domain')") domino
+              .forBtns
+                  button.add(ng-click='addInstitute()') Añadir más
+          li( ng-model='results', ng-repeat="result in results", ng-class="{even: $index % 2 == 0}")
+            .container
+              .sections(ng-click='editInstitute(result._id)') {{result.timestamp | date:'dd-MM-yyyy h:mm a'}}
+              .sections.colorFont(ng-click='editInstitute(result._id)') {{result.name}}
+              .sections(ng-click='editInstitute(result._id)') {{result.email_domain}}
+              .forBtns
+                button.enable(ng-if="result.enabled == true", ng-click="enableDisable(result._id, '1')") Activado
+                button.disable(ng-if="result.enabled == false", ng-click="enableDisable(result._id, '0')") discapaz
+          li
+            .button-container
+              button.btn.back.btn-primary(type='button', ng-click='getPage(-1)', ng-show="results" , ng-disabled="params.offset <= 0") espalda
+              button.btn.next.btn-primary(type='button', ng-click='getPage(+1)', ng-show="results" , ng-disabled="!gotResult") próximo     
+      //include footer here        
+      include footer

@@ -1,0 +1,189 @@
+doctype html
+html(ng-app='vehicleDetails', ng-controller='getVehicleId'
+xmlns='http://www.w3.org/1999/xhtml')
+head
+        title Administration Portal : Detalles de Carro
+        link(rel='stylesheet', href='../stylesheets/common.css')
+        link(rel='stylesheet', href='../stylesheets/bootstrap.min.css')
+        script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js')
+        link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css')
+        script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(type='text/javascript', src='http://code.jquery.com/ui/1.10.4/jquery-ui.js')
+        script(type='text/javascript', src='http://malsup.github.io/jquery.cycle.all.js')
+        script(type='text/javascript', src='../js/vehicledetail.js')
+body.userdetails
+    .head_section_bg
+      .search_wrapper
+        // header section container
+        .serach_container_header
+          .header
+            a(href='/search')
+              .logo
+            .wellog-dec
+              .wellog-dec-red PORTAL DE VERIFICACIÓN
+              .wellog-dec-blue detalles de Carro
+    // header section container
+    //main menu start from here
+    #navigation
+        .container
+          .nav
+            ul
+              li
+                a(href='/search') Personas
+              li
+                a.active(href='/vehicles') Carros
+              li
+                a(href='/network') Redes
+              li
+                a(href='/statistics') Estadísticas
+              li
+                a(href='/logout') Salir  
+            .clear
+    //main menu end here
+    // main container
+    .addredes
+        .loading(ng-show='loading')
+          img(src='../image/loader.gif')
+    .main_container
+      form
+        .search_wrapper
+          .backBtns
+            a(href='/vehicles') atrás
+          // serach full section
+          .search_full_fixed.border_sez
+            // left section
+            .photo_sez
+                img(ng-src='{{results.url_profile_img}}', width='297', height='445')
+            // left section
+            // right section
+            .field_sez
+              h1 usuario
+              ul.user_first
+                li
+                  .field_name nombre
+                  input(name='name', type='text' value='{{results.first_name}} {{results.last_name}}' readonly) 
+                li
+                  .field_name correo electrónico
+                  input(name='email', type='text' value='{{results.email}}' readonly)
+              ul.user_first.user_second
+                li
+                  .field_name red
+                  input(name='', type='text' disabled)
+                li.last
+                  .field_name celular
+                  input(name='mobile_number', type='text' value='{{results.mobile_number}}' readonly)
+                li
+                  .field_name cédula de ciudadanía
+                  input(name='', type='text' disabled)
+                li.last
+                  .field_name ciudad
+                  input(name='', type='text' disabled)
+                li.calendar_field
+                  .field_name fecha de nacimiento
+                  input#nacimiento(name='', type='text' disabled)
+                li.last
+                  .field_name sangre - rh
+                  input(name='', type='text' disabled)
+                li
+                  .field_name número de licencia
+                  input(name='', type='text' disabled)
+                li.last.calendar_field
+                  .field_name fecha de expedición
+                  input#expedicion(name='', type='text' disabled)
+                  
+            // right section
+          // serach full section
+          // serach full section
+          .search_full_fixed
+            .user_details_drop
+              .user_details_drop_right
+                h3 número de carros registrados
+                .style-select
+                  select(name='',ng-change="vehicledetails(indexNumber)", ng-model="indexNumber")
+                    option(value='') Please Select
+                    option(value='{{$index}}', ng-click="vehicledetails($index)", ng-repeat="(key, item) in output") ({{$index+1}}) {{item.plate_num}}
+                   
+            // left section
+            .photo_sez
+                .slider(width='297' height='400')
+                    a(href='javascript:void(0)', class='file_id_driving_license_img')
+                        img(ng-src='/files/{{vehicle.file_id_driving_license_img}}' width="297" height="440" alt="Driving License Image")
+                    a(href='javascript:void(0)', class='file_id_insurance_img')
+                        img(ng-src='/files/{{vehicle.file_id_insurance_img}}' width="297" height="440" alt="Car Insurance Image")
+                    a(href='javascript:void(0)', class='file_id_owner_slip_img')
+                        img(ng-src='/files/{{vehicle.file_id_owner_slip_img}}' width="297" height="440" alt="Owner Slip Image")
+                    a(href='javascript:void(0)', class='file_id_vehicle_img')
+                        img(ng-src='/files/{{vehicle.file_id_vehicle_img}}' width="297" height="440" alt="Vehicle Image") 
+                .photo_soat_sez
+                    a.ph_l(href='javascript:void(0)')
+                        img(src='../image/arrow-l.png')
+                    h6 SOAT
+                    a.ph_r(href='javascript:void(0)')
+                        img(src='../image/arrow-r.png')
+                .upload
+                    input(type='file', name='file', onchange='angular.element(this).scope().uploadFile(this.files,this.className)')
+                    .uptext(style="display:none") uploading......
+            // left section
+            // right section
+            .field_sez
+              h1 CARRO 1
+              ul.user_first.user_second
+                li
+                  .field_name placa
+                  input(name='plate_num', type='text' value='{{vehicle.plate_num}}' readonly)
+                li.last
+                  .field_name modelo
+                  input(name='make', type='text' value='{{vehicle.make}}' readonly)
+                li
+                  .field_name Marca
+                  input(name='brand', type='text' value='{{vehicle.brand}}' readonly)
+                li.last
+                  .field_name líanea
+                  input(name='', type='text' disabled)
+                li
+                  .field_name cilindrada
+                  input(name='', type='text' disabled)
+                li.last
+                  .field_name capacidad
+                  input(name='capacity', type='text' value='{{vehicle.capacity}}' readonly)
+              .border_tb
+                ul.user_first.user_second
+                  li
+                    .field_name propietario del vehículo
+                    input(name='', type='text' disabled)
+                  li.last
+                    .field_name identificación
+                    input(name='', type='text' disabled)
+              .border_b
+                ul.user_first.user_second.user_third
+                  li.soat
+                    h4 soat
+                  li.calendar_field
+                    .field_name expedición
+                    input#soat-expedicion(name='', type='text' disabled)
+                  li.last.calendar_field
+                    .field_name vencimiento
+                    input#soat-vencimiento(name='', type='text' disabled)
+              .check_field
+                p
+                  | {{url}} certifico que todas las fotografías recibidas son legibles y corresponden exactamente con los datos ingresados.
+                // radio section
+                .radio_style_section
+                  .radio_style
+                    input#yes(type='radio', value='approved', ng-model='checkout_method', name='checkout_method')
+                    label(for='yes')
+                      span
+                    label(for='yes') si
+                  .radio_style
+                    input#no(type='radio', value='rejected', ng-model='checkout_method', name='checkout_method')
+                    label(for='no')
+                      span
+                    label(for='no') no
+                // radio section
+                .textarea
+                  h5 comentarios:
+                  textarea(name='comment', cols='', rows='' ng-model='comment')
+            // right section
+          // serach full section
+          input(name='submit', type='button', value='enviar' ng-click='send()' )
+    // main container

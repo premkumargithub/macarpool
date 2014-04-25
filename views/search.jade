@@ -1,0 +1,90 @@
+doctype html
+html
+    head
+        title Administration Portal
+        script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js')
+        script(type='text/javascript', src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js")
+        link(rel='stylesheet', href='../stylesheets/common.css')
+        link(rel='stylesheet', href='../stylesheets/bootstrap.min.css')
+        script(type='text/javascript', src='../js/script.js')
+body.search(ng-app="SearchApp" , ng-controller='searchCtrl')
+    .search_wrapper
+      // header section container
+      .serach_container_header
+        .header
+          .logo
+          .wellog-dec
+            .wellog-dec-red PORTAL DE VERIFICACIÓN
+            .wellog-dec-blue BUSCAR USUARIO
+    // header section container
+    //main menu start from here
+    #navigation
+        .container
+          .nav
+            ul
+              li
+                a.active(href='/search') Personas
+              li
+                a(href='/vehicles') Carros
+              li
+                a(href='/network') Redes
+              li
+                a(href='/statistics') Estadísticas
+              li
+                a(href='/logout') Salir  
+            .clear
+    //main menu end here
+    // main section container
+    .searchcontainer
+      .search_wrapper
+        .form-section
+          form.search.ng-pristine.ng-valid(method='get', action='/search/do')
+            ul.searchcontainer_li
+              li.red(class="ng-class:first")
+                button.btn.btn-primary(type='button',ng-click='setFindOnly("passenger");first="";second="removeblue";') ver pasajeros
+              li.cond.blue(class="ng-class:second")
+                button.btn.btn-primary(type='button',ng-click='setFindOnly("driver");first="remove";second="";') ver conductores
+              li.gray(class="ng-class:third")
+                button.btn.btn-primary(type='button',ng-click='setFindOnly("default");first="";second="";') ver todos
+            .search_container_input
+              .search_container_input_one
+                input(type='hidden', ng-model='findOnly', value='default')
+                input#username.form-user(type='text', placeholder='CEDULA', ng-model="name", value='{{name}}')
+                input#cellular.cellular(type='text', placeholder='NUMERO DE CELLULAR', ng-model="cellular", value='{{cellular}}')
+              .search_container_input_one
+                input#email.email(type='text', placeholder='E-MAIL', ng-model="email", value='{{email}}')
+                input#number.number(type='text', placeholder='NOMBRE', ng-model="cc_number", value='{{cc_number}}')
+            .search_button
+              button.btn.btn-primary(type='button', ng-click='setFindOnly()') BUSCAR
+          div.msg( ng-show="err_messages" )
+            p {{err_messages}}
+    .search_wrapper_full
+      .results
+        .full-width-bg
+          .no_result(ng-model="noResult" , ng-show="noResult") {{noResult}}
+          ul.heading_title( ng-show="results.results.length > 0")
+            li(ng-click="reOrder('timestamp')")
+              | fecha
+              a(href='javascript:void(0)')
+                img(src='../image/arrow.png')
+            li(ng-click="reOrder('name')") nombre
+            li(ng-click="reOrder('cc_number')") CÉdula 
+            li(ng-click="reOrder('vehicles_admin_status')") Estado
+        .full-width-bg( ng-model='results', ng-repeat="result in results.results")
+          a(href = '/editor/{{result._id}}')  
+            ul(ng-click="searchUser()")
+              li {{result.timestamp | date:'dd-MM-yyyy h:mm a'}}
+              li(ng-class="{red_search: result.vehicle_count == 0,blue_search: result.vehicle_count != 0 }") {{result.first_name}} {{result.last_name}}
+              li cc {{result.cc_number}}   
+              li(ng-if="result.vehicles_admin_status == 'pending'", ng-class="{organe_search: result.vehicles_admin_status == 'pending'}") PENDIENTE
+              li(ng-if="result.vehicles_admin_status == 'approved'", ng-class="{blue_search: result.vehicles_admin_status == 'approved'}") VERIFICADO 
+              li(ng-if="result.vehicles_admin_status == 'rejected'", ng-class="{red_search: result.vehicles_admin_status == 'rejected'}") RECHAZADO 
+        .button-container
+            button.btn.back.btn-primary(type='button', ng-click='getPage(-1)', ng-show="results" , ng-disabled="params.offset <= 0") back
+            button.btn.next.btn-primary(type='button', ng-click='getPage(+1)', ng-show="results" , ng-disabled="!gotResult") next
+      // main section container
+      // footer
+      .footer-container
+        h3 2014
+        p Todos los derechos reservados © Miàguila SA
+      // footer

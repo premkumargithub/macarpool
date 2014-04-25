@@ -1,0 +1,60 @@
+doctype html
+html(ng-app='VehicleApp', ng-controller='vehicleCtl'
+xmlns='http://www.w3.org/1999/xhtml')
+head
+    //include header here
+    include header
+    script(type='text/javascript', src='../js/vehicle.js')
+  body
+    #wrapper
+      #header
+        .container
+          #logo
+            h1
+              a(href='search')
+                img(src='../image/logo.png')
+                span Vuela con un Amigo
+          .headerTxt
+            p Portal De verificación
+            p BUSCAR CARRO
+          .clear
+      include mainmenu
+      .contentSerch
+        .container
+          .srchBox
+            p
+              input(type='text', placeholder='placa', ng-model="searchitem.plate_num")
+              input.toFloat(type='text', placeholder='Identificatión', ng-model="searchitem.user_cc")
+            p
+              input.input.fullbox(type='text', placeholder='Propietario del Vehiculo', ng-model="searchitem.user_name")  
+          .forBtn
+            button(ng-click="setFindOnly()") BUSCAR
+          .clear
+      .addredes
+        .loading(ng-show='loading')
+          img(src='../image/loader.gif')       
+      #mainContent(ng-show="listPage")
+        .resultfound(ng-show="noresultFound") ningún vehículo encontrado
+        ul(ng-hide="noresultFound")
+          li.header
+            .container
+              .vehiclesection(ng-click="reOrder('timestamp')") Fecha
+                a(href='javascript:void(0)')
+                  img(src='../image/arrow.png')
+              .vehiclesection(ng-click="reOrder('plate_num')") Número de placa
+              .vehiclesection(ng-click="reOrder('admin_status')") estado
+          li( ng-model='results', ng-repeat="result in results", ng-class="{even: $index % 2 == 0}")
+            .container
+              .vehiclesection
+                a(href = '/vehicledetails/{{result._id}}') {{result.timestamp | date:'dd-MM-yyyy h:mm a'}}
+              .vehiclesection.colorFont
+                a(href = '/vehicledetails/{{result._id}}') {{result.plate_num}}
+              .vehiclesection(ng-if="result.admin_status == 'pending'", ng-class="{organe_search: result.admin_status == 'pending'}") PENDIENTE
+              .vehiclesection(ng-if="result.admin_status == 'approved'", ng-class="{blue_search: result.admin_status == 'approved'}") VERIFICADO 
+              .vehiclesection(ng-if="result.admin_status == 'rejected'", ng-class="{red_search: result.admin_status == 'rejected'}") RECHAZADO
+          li
+            .button-container
+              button.btn.back.btn-primary(type='button', ng-click='getPage(-1)', ng-show="results" , ng-disabled="params.offset <= 0") espalda
+              button.btn.next.btn-primary(type='button', ng-click='getPage(+1)', ng-show="results" , ng-disabled="!gotResult") próximo     
+      //include footer here        
+      include footer

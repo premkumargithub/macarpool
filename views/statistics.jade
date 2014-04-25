@@ -1,0 +1,61 @@
+doctype html
+html(ng-app='StatisticApp', ng-controller='statisticCtl'
+xmlns='http://www.w3.org/1999/xhtml')
+head
+	//include header here
+	include header
+	script(type='text/javascript', src='../js/statistic.js')
+	body
+		#wrapper
+			#header
+				.container
+					#logo
+						h1
+							a(href='search')
+								img(src='../image/logo.png')
+								span Vuela con un Amigo
+					.headerTxt
+						p Portal De Verificacion
+						p Estadísticas
+					.clear
+			include mainmenu
+			.statics
+				.addredes
+					.loading(ng-show='loading')
+						img(src='../image/loader.gif')
+				.container(ng-show='displayPage')
+					.resultfound(ng-show='noresultFound') No record found
+					.innerstats
+						ul
+							li
+								.forRed
+									p Número total de Pasajeros
+								.forNumber {{results.passenger_count}}
+								.forRed
+									p Promedio de viajes por pasajero
+								.forNumber {{results.passengers_per_trip}}
+								.forRed
+									p Tiempo promedio de viaje de pasajeros
+								.forNumber {{results.avg_hours_ridden_per_user | number:2}}
+							li
+								.forGreen
+									p Número total de conductores
+								.forNumber {{results.driver_count}}
+								.forGreen
+									p Promedio de viajes por conductor
+								.forNumber {{results.avg_trips_driven_per_user | number:2}}
+								.forGreen
+									p Tiempo promedio de viaje de conductores
+								.forNumber {{results.avg_trips_ridden_per_user | number:2}}
+							li
+								.forBlue
+									p Número total de viajes
+								.forNumber {{results.trips_count}}
+								.forBlue
+									p Pasajeros promedio por viaje
+								.forNumber {{results.passengers_per_trip}}
+								.forBlue
+									p Distancia promedio de viaje
+								.forNumber(step="0.01") {{results.avg_trip_distance  | number:2}}
+			//include footer here
+			include footer

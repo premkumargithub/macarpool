@@ -1,0 +1,691 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.navbar .nav>li>a.brand {
+	padding-left: 20px;
+	margin-left: 0
+}
+/*.content {
+	margin-top: 70px;
+	width: 100%
+}*/
+footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 30px;
+	width: 100%;
+	background: #ddd;
+	-webkit-box-shadow: 0 8px 6px 6px black;
+	-moz-box-shadow: 0 8px 6px 6px black;
+	box-shadow: 0 8px 6px 6px black
+}
+footer p {
+	padding: 5px 0 12px 10px
+}
+/**custom css **/
+body.signin {
+	background: #37b3b0;
+}
+/*.signin section.content {
+	margin: 0;
+}*/
+.signin .msg {
+	color: #FE0101;
+	float: left;
+	margin: 4px 0 0 0;
+	padding: 5px 0;
+	text-align: left;
+	width: 100%;
+}
+.search .msg {
+	color: #FE0101;
+	float: left;
+	margin: 4px 0 0 4px;
+	padding: 5px 0;
+	text-align: left;
+	width: 100%
+}
+.signin .header {
+	margin: 0 auto;
+}
+.signin .header .logo {
+	background: url("../image/login-logo.png") no-repeat;
+	width: 174px;
+	height: 127px;
+	margin: 72px auto auto;
+}
+.signin .header .wellog {
+	background: url("../image/welcome.png") no-repeat;
+	width: 276px;
+	height: 33px;
+	margin: 33px auto auto;
+}
+.signin .header .verificacion {
+	font-size: 30px;
+	color: #FFF;
+	text-align: center;
+	font-family: "Avenir";
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 33px 0 0 0;
+}
+.signin .signin_container {
+	width: 730px;
+	margin: 0 auto;
+}
+.signin .signin_container .signin_container_left {
+	float: left;
+	width: 408px
+}
+.signin .signin_container .signin_container_right {
+	float: right;
+	width: 285px;
+}
+.signin .signin .login-container {
+	margin: 101px 0 0 0;
+}
+.signin .signin .login-container input.form-user {
+	background: #FFFFFF;
+	border: 0 none;
+	color: #999999;
+	font-size: 18px;
+	padding: 11px 12px;
+	vertical-align: middle;
+	width: 100%;
+	font-family: "Avenir";
+}
+.signin .signin .login-container input.form-pass {
+	background: #FFFFFF;
+	border: 0 none;
+	color: #999999;
+	font-size: 18px;
+	padding: 11px 12px;
+	vertical-align: middle;
+	width: 100%;
+	margin: 13px 0 0 0;
+	font-family: "Avenir";
+}
+.signin .signin .login-container button.btn.btn-primary {
+	background: #F58957;
+	border: 0 none;
+	border-radius: 0;
+	color: #FFFFFF;
+	font-family: "Avenir";
+	font-size: 24px;
+	height: 101px;
+	vertical-align: middle;
+	width: 100%;
+	font-weight: bold;
+}
+.signin .fade.in.alert {
+	background: #FFFFFF;
+	opacity: 0.7;
+	position: fixed;
+	top: 0;
+	width: 84%;
+}
+.signin .footer-container {
+	margin: 270px 0 0 0;
+	float: left;
+	width: 100%;
+}
+.signin .footer-container h3 {
+	color: #f9c857;
+	font-size: 20px;
+	text-align: center;
+}
+.signin .footer-container p {
+	color: #fff;
+	font-size: 10px;
+	text-align: center;
+	font-family: arial;
+}
+.signin .results {
+	float: left
+}
+.signin .search .heading {
+	width: 100%;
+	float: left
+}
+.signin .search .heading li {
+	width: 250px;
+	float: left;
+	font-weight: bold;
+	list-style: none
+}
+.signin .searchresult li {
+	width: 250px;
+	float: left;
+	list-style: none
+}
+/**serach page**/
+body.search {
+	background: #fafafa;
+}
+.search .search_wrapper {
+	width: 960px;
+	margin: 0 auto;
+	display: table;
+}
+.search .search_wrapper_full {
+	width: 100%;
+	float: left;
+}
+.search .serach_container_header {
+	width: 100%;
+	float: left;
+	margin: 39px 0 0 0;
+}
+.search .header .logo {
+	float: left;
+	background: url("../image/logo-inner.png") no-repeat;
+	width: 174px;
+	height: 127px;
+}
+.search .header .wellog-dec {
+	float: left;
+	text-transform: uppercase;
+	font-size: 24px;
+	margin: 36px 0 0 0;
+	text-align: center;
+	width: 80%;
+}
+.search .header .wellog-dec-red {
+	color: #bf2f54;
+}
+.search .header .wellog-dec-blue {
+	color: #37b3b0;
+	font-weight: bold;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li {
+	display: inline-block;
+	margin: 0 0 18px 5px;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li li {
+	float: left;
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	background: #999999;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li li a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.search .searchcontainer .search_wrapper ul.searchcontainer_li li button {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 20px;
+    margin: 0;
+    min-width:318px;
+    padding: 23px 0;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li .cond {
+	background: #8d8d8d;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li .red {
+	background: #bf2f54;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li .remove{
+	background: #999;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li .blue {
+	background: #37b3b0;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li .removeblue {
+	background: #8D8D8D;
+}
+.search .searchcontainer .search_wrapper ul.searchcontainer_li .gray {
+	background: #4d4d4d;
+}
+.search .searchcontainer {
+	background: #e6e6e6;
+	width: 100%;
+	float: left;
+	padding: 25px 0;
+	margin: 0;
+}
+.search_container_input {
+	width: 80%;
+	float: left;
+}
+.search_container_input .search_container_input_one {
+	width: 100%;
+	float: left;
+	margin: 0 0 13px 0;
+}
+.search .searchcontainer .search_container_input .search_container_input_one input {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 0 none;
+	color: #999999;
+	font-family: "Avenir";
+	font-size: 18px;
+	padding: 11px 12px;
+	vertical-align: middle;
+	width: 48%;
+	float: left;
+	margin: 0 5px;
+}
+.search .search_button {
+	float: right;
+	width: 20%;
+}
+.search .searchcontainer .search_button button {
+	background: none repeat scroll 0 0 #bf2f54;
+	border: 0 none;
+	border-radius: 0;
+	color: #FFFFFF;
+	font-family: "Avenir";
+	font-size: 24px;
+	font-weight: bold;
+	height: 101px;
+	vertical-align: middle;
+	width: 100%;
+}
+.search .results {
+	width: 100%;
+}
+.search .results h2 {
+	color: #37b3b0;
+	text-transform: uppercase;
+	font-size: 24px;
+	text-align: center;
+	margin: 54px 0 0 0;
+}
+.search .results ul.heading_title {
+	margin: 92px auto auto;
+}
+.search .results ul.heading_title li {
+	text-align: center;
+	color: #999999;
+	margin: 15px 0;
+	text-transform: uppercase;
+	cursor:pointer
+}
+.search .results ul.heading_title li:last-child {
+	text-align: center;
+}
+.search .results .full-width-bg:nth-child(odd) {
+	background: #fafafa;
+}
+.search .results .full-width-bg:nth-child(even) {
+	background: #fff;
+}
+.search .results .full-width-bg li.red_search {
+	color: #bf2f54;
+}
+.search .results .full-width-bg li.blue_search {
+	color: #37b3b0;
+}
+.search .results .full-width-bg li.organe_search {
+	color: #f58957;
+}
+.search .results ul {
+	margin: 0 auto;
+	width: 960px;
+}
+.search .results ul li {
+	display: inline-block;
+	width: 23%;
+	padding: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #1c1c1c;
+	text-align: center;
+	text-transform: uppercase;
+}
+.search .footer-container {
+	margin: 81px 0 0 0;
+}
+.search .footer-container h3 {
+	color: #f9c857;
+	font-size: 20px;
+	text-align: center;
+}
+.search .footer-container p {
+	color: #cccccc;
+	font-size: 10px;
+	text-align: center;
+	font-family: arial;
+}
+
+.search .no_result{
+	color: #FE0101;
+    	margin: 10px 0 0;
+    	text-align: center;
+	
+	}
+.search .button-container{
+    	text-align: center;
+	margin:10px 0 0 0;
+	}
+.search .back{
+	margin: 10px 10px 0 0;
+	}
+.search .next{
+	margin: 10px 10px 0 0;
+	}
+
+/**user details**/
+body.userdetails {
+	background: #e6e6e6;
+}
+.userdetails .head_section_bg {
+	background: #fafafa;
+}
+.userdetails .search_full_fixed {
+	width: 100%;
+	float: left;
+}
+.userdetails .search_wrapper {
+	width: 960px;
+	margin: 0 auto;
+	display: table;
+}
+.userdetails .serach_container_header {
+	width: 100%;
+	float: left;
+	margin: 39px 0 39px 0;
+}
+.userdetails .header .logo {
+	float: left;
+	background: url("../image/logo-inner.png") no-repeat;
+	width: 174px;
+	height: 127px;
+}
+.userdetails .header .wellog-dec {
+	float: left;
+	text-transform: uppercase;
+	font-size: 24px;
+	margin: 36px 0 0 224px;
+}
+.userdetails .header .wellog-dec-red {
+	color: #bf2f54;
+}
+.userdetails .header .wellog-dec-blue {
+	color: #37b3b0;
+	font-weight: bold;
+}
+.userdetails .main_container {
+	width: 100%;
+	float: left;
+	margin: 15px 0 0 0;
+}
+.userdetails .photo_sez {
+	width: 297px;
+	float: left;
+	background: #fafafa;
+	min-height: 445px;
+}
+.userdetails .photo_sez img {
+	display:block;
+	margin:0 auto;
+}
+.userdetails .photo_sez .photo_soat_sez {
+	background:#b3b3b3;
+	width:100%;
+	float:left;
+}
+.userdetails .photo_sez .photo_soat_sez a.ph_l {
+	float:left;
+	padding:10px 5px 8px;
+}
+.userdetails .photo_sez .photo_soat_sez a.ph_r {
+	float:right;
+	padding:10px 5px 8px;
+}
+.userdetails .photo_sez .photo_soat_sez h6 {
+	float:left;
+	font-size:28px;
+	color:#FFF;
+	text-align:center;
+	margin:9px 0 0 78px;
+}
+/** field section**/
+.userdetails .field_sez {
+	width: 641px;
+	float: right;
+}
+.userdetails .field_sez h1 {
+	margin: 0;
+	font-size: 36px;
+	color: #FFF;
+	font-weight: bold;
+	background: #808080;
+	padding: 12px 0 12px 27px;
+	text-transform: uppercase;
+}
+.userdetails .field_sez ul.user_first {
+	margin: 0;
+	padding: 0;
+}
+.userdetails .field_sez ul.user_first li {
+	display: block;
+	width: 100%;
+	margin: 10px 0 0 0;
+	color: #666666;
+	font-size: 16px;
+	font-family: "Avenir";
+	text-transform: uppercase;
+}
+.userdetails .field_sez ul.user_first li h4 {
+	font-size: 25px;
+	float: left;
+	text-transform: uppercase;
+	margin: 34px 0 0 10px;
+}
+.userdetails .field_sez ul.user_first li .field_name {
+	margin: 0 0 0 25px;
+}
+.userdetails .field_sez ul.user_first li input {
+	width: 100%;
+	border: 0 none;
+	padding: 8px 25px 8px 25px;
+	margin: 8px 0 0 0;
+	font-size: 20px;
+	color: #1a1a1a;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.userdetails .field_sez ul.user_second li {
+	width: 48%;
+	float: left;
+	display: block;
+	position: relative;
+}
+.userdetails .field_sez ul.user_second li.last {
+	float: right;
+}
+.userdetails .field_sez ul.user_second li .field_name {
+	margin: 0 0 0 25px;
+}
+.userdetails .field_sez ul.user_second li.calendar_field input {
+	padding: 8px 100px 8px 25px;
+}
+.userdetails .field_sez ul.user_second li .ui-datepicker-trigger {
+	height: 24px;
+	position: absolute;
+	right: 13px;
+	top: 37px;
+	width: 23px;
+}
+.userdetails .field_sez ul.user_third li {
+	width: 38%;
+}
+.userdetails .field_sez ul.user_third li.soat {
+	width: 20%;
+}
+.userdetails .border_sez {
+	border-bottom: 10px solid #b3b3b3;
+	padding: 0 0 21px 0;
+}
+.userdetails .user_details_drop {
+	width: 100%;
+	float: left;
+}
+.userdetails .user_details_drop .user_details_drop_right {
+	width: 641px;
+	float: right;
+	padding: 20px 0;
+}
+.userdetails .user_details_drop .user_details_drop_right h3 {
+	color: #666666;
+	font-size: 16px;
+	margin: 12px 0 0 0;
+	float: left;
+	text-transform: uppercase;
+}
+.userdetails .user_details_drop .user_details_drop_right .style-select {
+	background: url("../image/select-drop.png") no-repeat scroll right 0 center #FFFFFF;
+	cursor: pointer;
+	overflow: hidden;
+	width: 50%;
+	float: right;
+}
+.userdetails .user_details_drop .user_details_drop_right .style-select select {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: 0 none;
+	color: #1a1a1a;
+	cursor: pointer;
+	padding: 8px;
+	width: 109%;
+	font-size: 18px;
+}
+.userdetails .border_tb {
+	border-bottom: 10px solid #b3b3b3;
+	border-top: 10px solid #b3b3b3;
+	margin: 21px 0 0 0;
+	padding: 0 0 21px 0;
+	width: 100%;
+	float: left;
+}
+.userdetails .border_b {
+	border-bottom: 10px solid #b3b3b3;
+	padding: 0 0 21px 0;
+	width: 100%;
+	float: left;
+}
+.userdetails .check_field {
+	width: 100%;
+	float: left;
+}
+.userdetails .check_field p {
+	color: #1a1a1a;
+	margin: 26px 0 0 5px;
+	text-transform: uppercase;
+}
+.userdetails .check_field .radio_style_section {
+	width:300px;
+	margin:25px auto auto;
+}
+.userdetails .check_field .radio_style {
+	float: left;
+	width:120px;
+}
+.userdetails .check_field .radio_style input[type="radio"] {
+	display: none;
+}
+.userdetails .check_field .radio_style input[type="radio"] + label {
+	float: left;
+}
+.userdetails .check_field .radio_style input[type="radio"] + label span {
+	background: url("../image/radio.png") no-repeat -40px;
+	cursor: pointer;
+	display: block;
+	height: 30px;
+	text-indent: -9999px;
+	width: 30px;
+}
+.userdetails .check_field .radio_style input[type="radio"]:checked + label span {
+	background: url("../image/radio.png") no-repeat 0px;
+}
+.userdetails .check_field .radio_style label {
+	float: left;
+	font-size: 20px;
+	color: #1a1a1a;
+	margin:0 0 0 11px;
+	cursor:pointer;
+}
+.userdetails .check_field .textarea {
+	float:left;
+	width:100%;
+	margin:22px 0 0 0;
+}
+.userdetails .check_field .textarea h5 {
+	text-transform:uppercase;
+	color:#666666;
+	font-size:16px;
+	margin:0 0 16px 25px;
+}
+.userdetails .check_field .textarea textarea {
+	width:100%;
+	border:0 none;
+	padding:10px;
+}
+.userdetails input[type="button"] {
+	width:100%;
+	background:#37b3b0;
+	border:0 none;
+	color:#fff;
+	font-size:36px;
+	text-transform:uppercase;
+	padding:15px 0 10px 0;
+	margin:36px 0 0 0;
+}
+.upload{
+    background: none repeat scroll 0 0 #E6E6E6;
+    float: left;
+    padding: 20px 0 0;
+    width: 100%; display:none;
+}
+
+/** field section**/
+#navigation {background:#808080; width:100%; margin-top:50px;}
+.nav ul {list-style:none;}
+.nav ul li {float:left; border-right:1px solid #999999;}
+.nav ul li:first-child, .nav ul li:last-child {border-left:1px solid #999999;}
+.nav ul li:last-child {float:right;}
+.nav ul li a {color:#FFF; padding:10px 25px; display:inline-block;text-transform: uppercase;}
+.nav ul li a:hover {background:#4d4d4d;}
+.nav ul li a.active {background:#4d4d4d;}
+.nav ul li a {text-decoration: none;}
+
+#navigation .container{
+	width: 960px;
+}
+
+.loading {
+    text-align: center;
+}
+
+.backBtns {
+    background: none repeat scroll 0 0 #552D56;
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    margin: 0 0 3px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 50px;
+}
+.backBtns a{
+	color: #ffffff;
+}
+.backBtns a:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.search_full_fixed .vehiclezero{
+    border: 0 none;
+    color: #1A1A1A;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 0 0;
+    padding: 8px 25px;
+    float: right;
+}

@@ -1,0 +1,97 @@
+doctype html
+html
+    head
+        title Administration Portal
+        link(rel='stylesheet', href='stylesheets/common.css')
+        link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css')
+        script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(type='text/javascript', src='http://code.jquery.com/ui/1.10.4/jquery-ui.js')
+        script(type='text/javascript', src='js/concarro.js')
+body.userdetails
+    .head_section_bg
+      .search_wrapper
+        // header section container
+        .serach_container_header
+          .header
+            .logo
+            .wellog-dec
+              .wellog-dec-red PORTAL DE VERIFICACIÓN
+              .wellog-dec-blue detalles de Usuario
+    // header section container
+    // main container
+    .main_container
+      form
+        .search_wrapper
+          // serach full section
+          .search_full_fixed.border_sez
+            // left section
+            .photo_sez
+                h2 SIN 
+                    span FOTO
+            // left section
+            // right section
+            .field_sez
+              h1 usuario
+              ul.user_first
+                li
+                  .field_name nombre
+                  input(name='', type='text')
+                li
+                  .field_name correo electrónico
+                  input(name='', type='text')
+              ul.user_first.user_second
+                li
+                  .field_name red
+                  input(name='', type='text')
+                li.last
+                  .field_name celular
+                  input(name='', type='text')
+                li
+                  .field_name cédula de ciudadanía
+                  input(name='', type='text')
+                li.last
+                  .field_name ciudad
+                  input(name='', type='text')
+                li.calendar_field
+                  .field_name fecha de nacimiento
+                  input#nacimiento(name='', type='text')
+                li.last
+                  .field_name sangre - rh
+                  input(name='', type='text')
+                li
+                  .field_name número de licencia
+                  input(name='', type='text')
+                li.last.calendar_field
+                  .field_name fecha de expedición
+                  input#expedicion(name='', type='text')
+                  
+            // right section
+          // serach full section
+          // serach full section
+          .search_full_fixed
+            .user_details_drop
+              .user_details_drop_right
+                h3 número de carros registrados
+                .style-select
+                  select(name='')
+                    option(value='1') 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+                    option(value='6') 6
+                    option(value='7') 7
+                    option(value='8') 8
+                    option(value='9') 9
+                    option(value='10') 10
+      
+            
+            // right section
+            .field_sez             
+              .check_field
+                 input(name='', type='button', value='enviar')
+            // right section
+          // serach full section
+          
+    // main container
